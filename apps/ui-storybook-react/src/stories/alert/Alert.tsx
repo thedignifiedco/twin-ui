@@ -18,6 +18,8 @@ export const DynamicAlert: React.FC<DynamicAlertProps> = ({
 	message,
 	icon: Icon = HiInformationCircle
 }) => {
+	const errorClass = color === "error" ? "bg-system-error-tints-100 dark:bg-system-error-tints-900 text-error" : "";
+
 	return (
 		<Alert
 			color={color}
@@ -25,6 +27,7 @@ export const DynamicAlert: React.FC<DynamicAlertProps> = ({
 			onDismiss={onDismiss}
 			rounded
 			additionalContent={additionalContent}
+			className={errorClass}
 		>
 			<span className="ml-2">{message}</span>
 		</Alert>
@@ -36,7 +39,7 @@ export const ExampleAdditionalContent: React.FC<{
 	color?: "success" | "info" | "warning" | "error";
 }> = ({ color = "info" }) => (
 	<>
-		<div className="mb-4 mt-2 text-sm text-cyan-700 dark:text-cyan-800">
+		<div className="mb-4 mt-2 text-sm text-cyan-700 dark:text-cyan-800 ">
 			More info about this info alert goes here. This example text is going to run a bit longer so
 			that you can see how spacing within an alert works with this kind of content.
 		</div>
