@@ -325,7 +325,7 @@ export function CardWithList() {
 								<img
 									alt="Neil image"
 									height="32"
-									src="/images/people/profile-picture-1.jpg"
+									src={Avatar}
 									width="32"
 									className="rounded-full"
 								/>
@@ -349,7 +349,7 @@ export function CardWithList() {
 								<img
 									alt="Bonnie image"
 									height="32"
-									src="/images/people/profile-picture-3.jpg"
+									src={Avatar}
 									width="32"
 									className="rounded-full"
 								/>
@@ -373,7 +373,7 @@ export function CardWithList() {
 								<img
 									alt="Michael image"
 									height="32"
-									src="/images/people/profile-picture-2.jpg"
+									src={Avatar}
 									width="32"
 									className="rounded-full"
 								/>
@@ -397,7 +397,7 @@ export function CardWithList() {
 								<img
 									alt="Lana image"
 									height="32"
-									src="/images/people/profile-picture-4.jpg"
+									src={Avatar}
 									width="32"
 									className="rounded-full"
 								/>
@@ -421,7 +421,7 @@ export function CardWithList() {
 								<img
 									alt="Thomas image"
 									height="32"
-									src="/images/people/profile-picture-5.jpg"
+									src={Avatar}
 									width="32"
 									className="rounded-full"
 								/>
