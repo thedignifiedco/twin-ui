@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HiCheckCircle } from "react-icons/hi";
+import { HiCheck, HiCheckCircle } from "react-icons/hi";
+import { RiNumber1 } from "react-icons/ri";
 import { Badge } from "flowbite-react";
 
 const meta: Meta<typeof Badge> = {
@@ -42,47 +43,12 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const TextWithColor: Story = {
-	args: {
-		children: "Text Badge",
-		size: "sm",
-		color: "info"
-	}
-};
-
-export const IconWithColor: Story = {
-	args: {
-		children: "Icon Badge",
-		icon: () => <HiCheckCircle />,
-		size: "sm",
-		color: "info"
-	}
-};
-
 export const AllTextBadges: Story = {
 	render: () => (
 		<div className="flex flex-wrap gap-2">
-			{[
-				"info",
-				"gray",
-				"failure",
-				"success",
-				"warning",
-				"indigo",
-				"purple",
-				"pink",
-				"blue",
-				"cyan",
-				"dark",
-				"light",
-				"green",
-				"lime",
-				"red",
-				"teal",
-				"yellow"
-			].map(color => (
+			{["gray", "failure", "warning", "success", "blue"].map(color => (
 				<Badge key={color} color={color} size="sm">
-					{color.charAt(0).toUpperCase() + color.slice(1)} Badge
+					Badge
 				</Badge>
 			))}
 		</div>
@@ -92,121 +58,82 @@ export const AllTextBadges: Story = {
 export const AllIconBadges: Story = {
 	render: () => (
 		<div className="flex flex-wrap gap-2">
-			{[
-				"info",
-				"gray",
-				"failure",
-				"success",
-				"warning",
-				"indigo",
-				"purple",
-				"pink",
-				"blue",
-				"cyan",
-				"dark",
-				"light",
-				"green",
-				"lime",
-				"red",
-				"teal",
-				"yellow"
-			].map(color => (
+			{["gray", "failure", "warning", "success", "blue"].map(color => (
 				<Badge key={color} color={color} size="sm" className="flex items-center">
 					<HiCheckCircle className="mr-2" />
-					{color.charAt(0).toUpperCase() + color.slice(1)} Badge
+					<span className="whitespace-nowrap"> Badge</span>
+				</Badge>
+			))}
+		</div>
+	)
+};
+export const AllTextMDBadges: Story = {
+	render: () => (
+		<div className="flex flex-wrap gap-2">
+			{["gray", "failure", "warning", "success", "blue"].map(color => (
+				<Badge key={color} color={color} size="md">
+					Badge
+				</Badge>
+			))}
+		</div>
+	)
+};
+export const AllIconMDBadges: Story = {
+	render: () => (
+		<div className="flex flex-wrap gap-2">
+			{["gray", "failure", "warning", "success", "blue"].map(color => (
+				<Badge key={color} color={color} size="md" className="flex items-center">
+					<HiCheckCircle className="mr-2" />
+					<span className="whitespace-nowrap"> Badge</span>
+				</Badge>
+			))}
+		</div>
+	)
+};
+export const AllIconSMRightBadges: Story = {
+	render: () => (
+		<div className="flex flex-wrap gap-2">
+			{["gray", "failure", "warning", "success", "blue"].map(color => (
+				<Badge key={color} color={color} size="sm" className="flex items-center">
+					<span className="whitespace-nowrap"> Badge</span>
+					<HiCheckCircle className="ml-2" />
+				</Badge>
+			))}
+		</div>
+	)
+};
+export const AllIconMDRightBadges: Story = {
+	render: () => (
+		<div className="flex flex-wrap gap-2">
+			{["gray", "failure", "warning", "success", "blue"].map(color => (
+				<Badge key={color} color={color} size="md" className="flex items-center">
+					<span className="whitespace-nowrap"> Badge</span>
+					<HiCheckCircle className="ml-2" />
+				</Badge>
+			))}
+		</div>
+	)
+};
+export const IconBadges: Story = {
+	render: () => (
+		<div className="flex flex-wrap gap-2">
+			{["gray", "failure", "warning", "success", "blue"].map(color => (
+				<Badge key={color} color={color} size="sm" icon={HiCheck} />
+	
+			))}
+		</div>
+	)
+};
+
+export const BadgesNumberSmall: Story = {
+	render: () => (
+		<div className="flex flex-wrap gap-2">
+			{["gray", "failure", "warning", "success", "blue"].map(color => (
+				<Badge key={color} color={color} size="md" icon={RiNumber1} >
+			
 				</Badge>
 			))}
 		</div>
 	)
 };
 
-export const AllIconTextBadges: Story = {
-	render: () => (
-		<div className="flex flex-wrap gap-2">
-			{[
-				"info",
-				"gray",
-				"failure",
-				"success",
-				"warning",
-				"indigo",
-				"purple",
-				"pink",
-				"blue",
-				"cyan",
-				"dark",
-				"light",
-				"green",
-				"lime",
-				"red",
-				"teal",
-				"yellow"
-			].map(color => (
-				<Badge key={color} color={color} size="sm">
-					<HiCheckCircle className="mr-2" /> {color.charAt(0).toUpperCase() + color.slice(1)} Badge
-				</Badge>
-			))}
-		</div>
-	)
-};
-
-export const TextBadgesSmall: Story = {
-	render: () => (
-		<div className="flex flex-wrap gap-2">
-			{[
-				"info",
-				"gray",
-				"failure",
-				"success",
-				"warning",
-				"indigo",
-				"purple",
-				"pink",
-				"blue",
-				"cyan",
-				"dark",
-				"light",
-				"green",
-				"lime",
-				"red",
-				"teal",
-				"yellow"
-			].map(color => (
-				<Badge key={color} color={color} size="xs">
-					{color.charAt(0).toUpperCase() + color.slice(1)} Badge
-				</Badge>
-			))}
-		</div>
-	)
-};
-
-export const IconTextBadgesSmall: Story = {
-	render: () => (
-		<div className="flex flex-wrap gap-2">
-			{[
-				"info",
-				"gray",
-				"failure",
-				"success",
-				"warning",
-				"indigo",
-				"purple",
-				"pink",
-				"blue",
-				"cyan",
-				"dark",
-				"light",
-				"green",
-				"lime",
-				"red",
-				"teal",
-				"yellow"
-			].map(color => (
-				<Badge key={color} color={color} size="xs">
-					<i className={`fas fa-check-circle mr-2`}></i>{" "}
-					{color.charAt(0).toUpperCase() + color.slice(1)} Badge
-				</Badge>
-			))}
-		</div>
-	)
-};

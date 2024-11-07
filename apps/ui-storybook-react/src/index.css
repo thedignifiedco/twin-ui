@@ -3,3 +3,10 @@
 @import 'tailwindcss/utilities';
 
 @import '@twin.org/ui-components-react/css/index.css';
+
+.h-fit span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
