@@ -32,6 +32,7 @@ const TextInputWithLabel: React.FC<TextInputWithLabelProps> = ({
 					onChange={e => setValue(e.target.value)}
 					sizing={size}
 				/>
+		    <HiUser className="absolute right-[43.5rem] top-[47%] -translate-y-1/2 text-gray-400" />
 			</div>
 			<p className="text-sm text-gray-500">
 				We’ll never share your details. See our{" "}
