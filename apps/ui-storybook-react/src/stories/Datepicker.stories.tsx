@@ -18,19 +18,16 @@ export function DateRangeSelector() {
 
 	return (
 		<div className="flex flex-col space-y-4">
-			
-			
-				<Datepicker
-          label="Select Period"
-					selected={startDate}
-					onChange={date => setStartDate(date)}
-					labelTodayButton="Ok"
-					labelClearButton="Clear"
-					className="text-gray-50"
-				/>
-			
-			
-				{/* <Datepicker
+			<Datepicker
+				label="Select Period"
+				selected={startDate}
+				onChange={date => setStartDate(date)}
+				labelTodayButton="Ok"
+				labelClearButton="Clear"
+				className="text-gray-50"
+			/>
+
+			{/* <Datepicker
 					inline
 					selected={endDate}
 					onChange={date => setEndDate(date)}
@@ -38,7 +35,6 @@ export function DateRangeSelector() {
 					labelClearButton="Clear"
 					className="text-gray-50"
 				/> */}
-
 		</div>
 	);
 }
