@@ -1,4 +1,3 @@
-// SearchInput.tsx
 import React, { useState } from "react";
 import { HiSearch, HiX } from "react-icons/hi";
 
