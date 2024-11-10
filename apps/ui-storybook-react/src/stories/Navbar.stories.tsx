@@ -14,7 +14,6 @@ export const BasicNavbar: Story = {
 		<Navbar fluid rounded>
 			<Navbar.Brand href="https://flowbite-react.com">
 				<img src="./images/LogoTwin.png" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
-			
 			</Navbar.Brand>
 			<Navbar.Toggle />
 			<Navbar.Collapse>
