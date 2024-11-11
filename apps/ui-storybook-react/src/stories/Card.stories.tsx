@@ -1,11 +1,12 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
+import type { Meta } from "@storybook/react";
 import { Button } from "@twin.org/ui-components-react";
 import { Card, Dropdown, Label, TextInput, Checkbox } from "flowbite-react";
 import CardHeaderimage from "/images/card-header.png";
 import SideImage from "/images/card-header-side.png";
 import Avatar from "/images/Avatar.png";
-import Ecomreace from "/images/Image.png"
+import Ecomreace from "/images/gift.png";
+import See from "/images/see.png";
+import CardImage from "/images/Image.png";
 
 const meta = {
 	title: "Components/Card",
@@ -13,13 +14,6 @@ const meta = {
 } satisfies Meta<typeof Card>;
 
 export default meta;
-
-export const Default: StoryObj<typeof Card> = {
-	args: {
-		children: "Card content",
-		onClick: fn()
-	}
-};
 
 export const BasicCard = () => (
 	<Card href="#" className="max-w-sm">
@@ -33,6 +27,30 @@ export const BasicCard = () => (
 	</Card>
 );
 
+export const GiftCard = () => (
+	<Card className="max-w-sm">
+		<div className="flex items-center gap-4">
+			<div className="flex-1">
+				<img src={Ecomreace} alt="ecommerce" className="h-24" />
+
+				<h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+					Need a help in Claim?
+				</h5>
+				<p className="font-normal text-gray-700 dark:text-gray-400">
+					Go to this step by step guideline process on how to certify for your weekly benefits:
+				</p>
+				<div className="mt-2 items-center flex gap-2">
+					<a href="#" className="text-blue-600 hover:underline">
+						{" "}
+						See our guideline
+					</a>
+					<img src={See} alt="ecommerce" className="ml-2 h-4" />{" "}
+				</div>
+			</div>
+		</div>
+	</Card>
+);
+
 export const CardWithButton = () => (
 	<Card className="max-w-sm">
 		<h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -42,7 +60,7 @@ export const CardWithButton = () => (
 			Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse
 			chronological order.
 		</p>
-		<Button>
+		<Button color={"info"} size="sm">
 			Read more
 			<svg className="-mr-1 ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
 				<path
@@ -64,15 +82,23 @@ export const CardWithImage = () => (
 			Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse
 			chronological order.
 		</p>
+		<Button color={"info"} size="sm">
+			Read more
+			<svg className="-mr-1 ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+				<path
+					fillRule="evenodd"
+					d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+					clipRule="evenodd"
+				/>
+			</svg>
+		</Button>
 	</Card>
 );
 
 export const CardWithCustomImage = () => (
 	<Card
-		className="max-w-sm"
-		renderImage={() => (
-			<img width={500} height={500} src={CardHeaderimage} alt="image 1" />
-		)}
+		className="max-w-lg flex-row"
+		renderImage={() => <img width={200} height={500} src={CardHeaderimage} alt="image 1" />}
 	>
 		<h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 			Noteworthy technology acquisitions 2021
@@ -133,7 +159,7 @@ export const CardWithDropdownAndProfileImage = () => (
 			<div className="mt-4 flex space-x-3 lg:mt-6">
 				<a
 					href="#"
-					className="inline-flex items-center rounded-lg bg-cyan-700 px-4 py-2 text-white"
+					className="inline-flex items-center rounded-lg bg-blue-700 px-4 py-2 text-white"
 				>
 					Add friend
 				</a>
@@ -164,7 +190,7 @@ export const CardWithForm = () => (
 				<Checkbox id="remember" />
 				<Label htmlFor="remember">Remember me</Label>
 			</div>
-			<Button type="submit">Submit</Button>
+			<Button type="submit" color={"info"} >Submit</Button>
 		</form>
 	</Card>
 );
@@ -174,7 +200,7 @@ export function ECommerceCard() {
 		<Card
 			className="max-w-sm"
 			imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
-			imgSrc={Ecomreace}
+			imgSrc={CardImage}
 		>
 			<a href="#">
 				<h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
@@ -230,7 +256,7 @@ export function ECommerceCard() {
 				<span className="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
 				<a
 					href="#"
-					className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
+					className="rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
 				>
 					Add to cart
 				</a>
@@ -457,7 +483,7 @@ export function PricingCard() {
 			<ul className="my-7 space-y-5">
 				<li className="flex space-x-3">
 					<svg
-						className="h-5 w-5 shrink-0 text-cyan-600 dark:text-cyan-500"
+						className="h-5 w-5 shrink-0 text-blue-600 dark:text-cyan-500"
 						fill="currentColor"
 						viewBox="0 0 20 20"
 						xmlns="http://www.w3.org/2000/svg"
@@ -474,7 +500,7 @@ export function PricingCard() {
 				</li>
 				<li className="flex space-x-3">
 					<svg
-						className="h-5 w-5 shrink-0 text-cyan-600 dark:text-cyan-500"
+						className="h-5 w-5 shrink-0 text-blue-600 dark:text-cyan-500"
 						fill="currentColor"
 						viewBox="0 0 20 20"
 						xmlns="http://www.w3.org/2000/svg"
@@ -491,7 +517,7 @@ export function PricingCard() {
 				</li>
 				<li className="flex space-x-3">
 					<svg
-						className="h-5 w-5 shrink-0 text-cyan-600 dark:text-cyan-500"
+						className="h-5 w-5 shrink-0 text-blue-600 dark:text-cyan-500"
 						fill="currentColor"
 						viewBox="0 0 20 20"
 						xmlns="http://www.w3.org/2000/svg"
@@ -508,7 +534,7 @@ export function PricingCard() {
 				</li>
 				<li className="flex space-x-3 line-through decoration-gray-500">
 					<svg
-						className="h-5 w-5 shrink-0 text-gray-400 dark:text-gray-500"
+						className="h-5 w-5 shrink-0 text-blue-600 dark:text-gray-500"
 						fill="currentColor"
 						viewBox="0 0 20 20"
 						xmlns="http://www.w3.org/2000/svg"
@@ -573,7 +599,7 @@ export function PricingCard() {
 			</ul>
 			<button
 				type="button"
-				className="inline-flex w-full justify-center rounded-lg bg-cyan-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-700 focus:outline-none focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-900"
+				className="inline-flex w-full justify-center rounded-lg bg-blue-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-700 focus:outline-none focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-900"
 			>
 				Choose plan
 			</button>
@@ -590,7 +616,7 @@ export function CryptoCardWeb3() {
 			<p className="font-normal text-gray-700 dark:text-gray-400">
 				Connect with one of our available wallet providers or create a new one.
 			</p>
-			<div className="mb-5 mt-2.5 flex items-center flex-col gap-3">
+			<div className="mb-5 mt-2.5 flex flex-col items-center gap-3">
 				<button
 					type="button"
 					className="flex w-full items-center justify-center gap-3 rounded-lg bg-[#F4F6F8] px-5 py-2.5 text-center text-sm font-medium text-gray-900"
@@ -620,7 +646,7 @@ export function CryptoCardWeb3() {
 					/>
 					<span className="ml-2 text-lg">Coinbase Wallet</span>
 				</button>
-        <button
+				<button
 					type="button"
 					className="flex w-full items-center justify-center gap-3 rounded-lg bg-[#F4F6F8] px-5 py-2.5 text-center text-sm font-medium text-gray-900"
 				>
@@ -632,7 +658,7 @@ export function CryptoCardWeb3() {
 					/>
 					<span className="ml-2 text-lg">Opera Wallet</span>
 				</button>
-        <button
+				<button
 					type="button"
 					className="flex w-full items-center justify-center gap-3 rounded-lg bg-[#F4F6F8] px-5 py-2.5 text-center text-sm font-medium text-gray-900"
 				>
@@ -644,7 +670,7 @@ export function CryptoCardWeb3() {
 					/>
 					<span className="ml-2 text-lg">WalletConnect</span>
 				</button>
-        <button
+				<button
 					type="button"
 					className="flex w-full items-center justify-center gap-3 rounded-lg bg-[#F4F6F8] px-5 py-2.5 text-center text-sm font-medium text-gray-900"
 				>
@@ -656,7 +682,10 @@ export function CryptoCardWeb3() {
 					/>
 					<span className="ml-2 text-lg">Fortmatic</span>
 				</button>
-        <span className="ml-2 text-sx text-gray-500">  Why do I need to connect with my wallet?</span>
+				<span className="text-sx ml-2 text-gray-500">
+					{" "}
+					Why do I need to connect with my wallet?
+				</span>
 			</div>
 		</Card>
 	);

@@ -8,25 +8,7 @@ const meta: Meta<typeof Badge> = {
 	component: Badge,
 	argTypes: {
 		color: {
-			options: [
-				"info",
-				"gray",
-				"failure",
-				"success",
-				"warning",
-				"indigo",
-				"purple",
-				"pink",
-				"blue",
-				"cyan",
-				"dark",
-				"light",
-				"green",
-				"lime",
-				"red",
-				"teal",
-				"yellow"
-			],
+			options: ["gray", "failure", "success", "warning", "blue"],
 			control: { type: "inline-radio" }
 		},
 		size: {
@@ -119,7 +101,6 @@ export const IconBadges: Story = {
 		<div className="flex flex-wrap gap-2">
 			{["gray", "failure", "warning", "success", "blue"].map(color => (
 				<Badge key={color} color={color} size="sm" icon={HiCheck} />
-	
 			))}
 		</div>
 	)
@@ -129,11 +110,8 @@ export const BadgesNumberSmall: Story = {
 	render: () => (
 		<div className="flex flex-wrap gap-2">
 			{["gray", "failure", "warning", "success", "blue"].map(color => (
-				<Badge key={color} color={color} size="md" icon={RiNumber1} >
-			
-				</Badge>
+				<Badge key={color} color={color} size="md" icon={RiNumber1}></Badge>
 			))}
 		</div>
 	)
 };
-
