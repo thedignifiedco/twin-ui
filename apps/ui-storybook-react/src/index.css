@@ -31,3 +31,7 @@ ul {
 button:focus{
     border: #1568E4;
 }
+.bg-cyan-50{
+    background-color: #1568E4 !important;
+    color: white !important;
+}
