@@ -10,6 +10,45 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<typeof Popover>;
 
+const content = (
+  <div className="w-64 text-sm text-gray-500 dark:text-gray-400">
+    <div className="border-b border-gray-200 bg-gray-100 px-3 py-2 dark:border-gray-600 dark:bg-gray-700">
+      <h3 className="font-semibold text-gray-900 dark:text-white">Popover title</h3>
+    </div>
+    <div className="px-3 py-2">
+      <p>And here's some amazing content. It's very engaging. Right?</p>
+    </div>
+  </div>
+);
+
+export const TopPopover: Story = {
+  render: () => (
+    <Popover content={content} placement="top">
+        <Button>Popover top</Button>
+      </Popover>
+  )
+}
+export const BottomPopover:Story ={
+  render: () => (
+    <Popover content={content} placement="bottom">
+        <Button>Popover bottom</Button>
+      </Popover>
+  )
+}
+export const LeftPopover:Story = {
+  render: () => (
+    <Popover content={content} placement="left">
+        <Button>Popover left</Button>
+      </Popover>)
+}
+
+export const RightPopover:Story = {
+  render: () => (
+    <Popover content={content} placement="right">
+        <Button>Popover right</Button>
+      </Popover>
+  )
+}
 
 export const DefaultPopover: Story = {
   render: () => (
@@ -80,7 +119,7 @@ export const ProfilePopover: Story = {
             <li>
               <a href="#" className="hover:underline">
                 <span className="font-semibold text-gray-900 dark:text-white">3,758</span>
-                <span>Followers</span>
+                <span className="text" >Followers</span>
               </a>
             </li>
           </ul>
