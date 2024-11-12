@@ -17,3 +17,17 @@
 ul {
     list-style-type: none;
 }
+.bg-cyan-600{
+    background-color: #1568E4;
+    color: white !important;
+}
+.border-cyan-600 {
+    --tw-border-opacity: 1;
+    border-color: #1568E4;
+}
+.text-cyan-600{
+    color:#1568E4
+}
+button:focus{
+    border: #1568E4;
+}
