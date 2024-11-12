@@ -43,19 +43,13 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-	args: {
-		size: "md",
-		color: "dark"
-    
-	}
-};
 
 export const Small: Story = {
 	args: {
 		size: "sm",
-		color: "blue"
-	}
+		color: "blue",
+		progress: 100,
+	},
 };
 
 export const Large: Story = {
