@@ -14,3 +14,6 @@
     --tw-bg-opacity: 1;
     background-color: #FF7C15 !important;
 }
+ul {
+    list-style-type: none;
+}

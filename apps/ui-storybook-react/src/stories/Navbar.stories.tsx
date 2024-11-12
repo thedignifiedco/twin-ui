@@ -17,18 +17,52 @@ export const BasicNavbar: Story = {
 			</Navbar.Brand>
 			<Navbar.Toggle />
 			<Navbar.Collapse>
-				<Navbar.Link href="#">
-					Home
-				</Navbar.Link>
+				<Navbar.Link href="#">Home</Navbar.Link>
 				<Navbar.Link href="#">About</Navbar.Link>
 				<Navbar.Link href="#">Services</Navbar.Link>
 				<Navbar.Link href="#">Pricing</Navbar.Link>
 				<Navbar.Link href="#">Contact</Navbar.Link>
 			</Navbar.Collapse>
+			<div className="flex items-center md:order-2">
+				<Button href="#" color="primary">
+					Login
+				</Button>
+				<Button href="#" color="blue">
+					Get started
+				</Button>
+			</div>
 		</Navbar>
 	)
 };
 
+export const SideBySideNavbar: Story = {
+	render: () => (
+		<Navbar fluid rounded>
+			<div className="flex gap-3 items-center">
+				<Navbar.Brand href="https://flowbite-react.com">
+					<img src="./images/LogoTwin.png" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
+				</Navbar.Brand>
+				<ul className="flex list-none gap-2 md:order-1">
+					<Navbar.Link href="#">Home</Navbar.Link>
+					<Navbar.Link href="#">About</Navbar.Link>
+					<Navbar.Link href="#">Services</Navbar.Link>
+					<Navbar.Link href="#">Pricing</Navbar.Link>
+					<Navbar.Link href="#">Contact</Navbar.Link>
+				</ul>
+			</div>
+			{/* <Navbar.Toggle /> */}
+
+			<div className="flex items-center md:order-2">
+				<Button href="#" color="primary">
+					Login
+				</Button>
+				<Button href="#" color="blue">
+					Get started
+				</Button>
+			</div>
+		</Navbar>
+	)
+};
 export const NavbarWithDropdown: Story = {
 	render: () => (
 		<Navbar fluid rounded>
@@ -60,9 +94,7 @@ export const NavbarWithDropdown: Story = {
 				<Navbar.Toggle />
 			</div>
 			<Navbar.Collapse>
-				<Navbar.Link href="#">
-					Home
-				</Navbar.Link>
+				<Navbar.Link href="#">Home</Navbar.Link>
 				<Navbar.Link href="#">About</Navbar.Link>
 				<Navbar.Link href="#">Services</Navbar.Link>
 				<Navbar.Link href="#">Pricing</Navbar.Link>
@@ -79,13 +111,11 @@ export const NavbarWithButton: Story = {
 				<img src="./images/LogoTwin.png" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
 			</Navbar.Brand>
 			<div className="flex md:order-2">
-				<Button>Get started</Button>
+				<Button color="blue">Get started</Button>
 				<Navbar.Toggle />
 			</div>
 			<Navbar.Collapse>
-				<Navbar.Link href="#" >
-					Home
-				</Navbar.Link>
+				<Navbar.Link href="#">Home</Navbar.Link>
 				<Navbar.Link href="#">About</Navbar.Link>
 				<Navbar.Link href="#">Services</Navbar.Link>
 				<Navbar.Link href="#">Pricing</Navbar.Link>
@@ -103,17 +133,12 @@ export const NavbarWithNextLinks: Story = {
 			</Navbar.Brand>
 			<Navbar.Toggle />
 			<Navbar.Collapse>
-				<Navbar.Link href="#">
-					Home
-				</Navbar.Link>
-				<Navbar.Link href="#">
-					About
-				</Navbar.Link>
+				<Navbar.Link href="#">Home</Navbar.Link>
+				<Navbar.Link href="#">About</Navbar.Link>
 				<Navbar.Link href="#">Services</Navbar.Link>
 				<Navbar.Link href="#">Pricing</Navbar.Link>
 				<Navbar.Link href="#">Contact</Navbar.Link>
 			</Navbar.Collapse>
-			
 		</Navbar>
 	)
 };
