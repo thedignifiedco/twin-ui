@@ -24,7 +24,7 @@ export const SpeedDial: React.FC<SpeedDialProps> = ({ options, textPosition = "t
 				<HiPlus className="text-2xl" />
 			</button>
 			{isOpen && (
-				<div className="absolute mt-4 flex flex-col items-center space-y-2">
+				<div className="absolute mt-4 flex flex-col space-y-2">
 					{options.map((option, index) => (
 						<div
 							key={index}
