@@ -14,7 +14,7 @@ export const defaultSkeleton = () => (
 	</div>
 );
 
-// Skeleton 2
+
 export const ImagePlacholder = () => (
 	<div
 		role="status"
@@ -43,7 +43,7 @@ export const ImagePlacholder = () => (
 	</div>
 );
 
-// Skeleton 3
+
 export const TextPlaceHolder = () => (
 	<div role="status" className="flex max-w-lg animate-pulse flex-col gap-2 space-y-2.5">
 		<div className="flex w-full items-center">
